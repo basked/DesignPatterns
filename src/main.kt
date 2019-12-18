@@ -40,7 +40,7 @@ class Bender(
 
 fun main() {
     // Constructors
-    val bender = Bender("basket", "gold");
+
     // DESIGN PATTERN
 
     val factory = listOf<KomputersFactory>(AsusFactoty(), DellFactoty())
@@ -51,19 +51,11 @@ fun main() {
     }
 
     val factory2 = listOf<GefestFactory>(
-            BzgaFactory(),
-            GtFactory()
+        BzgaFactory(),
+        GtFactory()
     )
-    for(i in 0..1) {
-        factory2.get(i).createVozduhan()
-        factory2.get(i).createGazPlita()
-        factory2.get(i).createStol()
-        factory2.get(i).createElecro()
-        factory2.get(i).createGazElectroPlita()
-        factory2.get(i).createDuhovka()
+    for(i in 0..factory2.count()-1) {
+        factory2.get(i).createAll()
     }
-
-
-
 
 }

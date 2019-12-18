@@ -7,6 +7,15 @@ interface GefestFactory {
     fun createVozduhan(): Vozduhan
     fun createDuhovka(): Duhovka
     fun createStol(): Stol
+    fun createAll(){
+        createGazPlita()
+        createElecro()
+        createGazElectroPlita()
+        createVozduhan()
+        createDuhovka()
+        createStol()
+    }
+
 }
 
 interface GazPlita{}
@@ -144,47 +153,15 @@ class GtFactory() : GefestFactory {
         return StolGT()
     }
 }
-//
-//class KvarcFactory() : GefestFactory {
-//    override fun createGazPlita(): GazPlita {
-//        return GazPlita()
-//    }
-//
-//    override fun createElecro(): ElecroPlita {
-//        return ElecroPlita()
-//    }
-//
-//    override fun createGazElectroPlita(): GazElectroPlita {
-//        return GazElectroPlita()
-//    }
-//
-//    override fun createVozduhan(): Vozduhan {
-//        return Vozduhan()
-//    }
-//
-//    override fun createDuhovka(): Duhovka {
-//        return Duhovka()
-//    }
-//
-//    override fun createStol(): Stol {
-//        return Stol()
-//    }
-//
-//}
-//
-//
+
+
 
 fun main() {
     val factory = listOf<GefestFactory>(
             BzgaFactory(),
             GtFactory()
     )
- for(i in 0..1) {
-     factory.get(i).createVozduhan()
-     factory.get(i).createGazPlita()
-     factory.get(i).createStol()
-     factory.get(i).createElecro()
-     factory.get(i).createGazElectroPlita()
-     factory.get(i).createDuhovka()
+ for(i in 0..factory.count()-1) {
+     factory.get(i).createAll()
  }
 }
