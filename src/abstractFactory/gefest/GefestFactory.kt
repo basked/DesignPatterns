@@ -27,11 +27,7 @@ interface Stol{}
 
 
 // BZGA
-class DuhovkaBZGA: Duhovka {
-    init {
-        println("Create Duhovka BZGA")
-    }
-}
+
 
 class VozduhanBZGA: Vozduhan {
     init {
@@ -62,7 +58,11 @@ class StolBZGA: Stol {
         println("Create Stol BZGA")
     }
 }
-
+class DuhovkaBZGA: Duhovka {
+    init {
+        println("Create Duhovka BZGA")
+    }
+}
 
 //GT
 class DuhovkaGT: Duhovka {
@@ -101,7 +101,7 @@ class StolGT: Stol {
     }
 }
 
-class BzgaFactory() : GefestFactory {
+public class BzgaFactory() : GefestFactory {
     override fun createGazPlita(): GazPlita {
         return GazPlitaBZGA()
     }
@@ -128,7 +128,7 @@ class BzgaFactory() : GefestFactory {
 
 }
 
-class GtFactory() : GefestFactory {
+public class GtFactory() : GefestFactory {
     override fun createGazPlita(): GazPlita {
         return GazPlitaGT()
     }

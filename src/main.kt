@@ -1,4 +1,6 @@
-import abstractFactory.gefest.*
+import abstractFactory.gefest.BzgaFactory
+import abstractFactory.gefest.GefestFactory
+import abstractFactory.gefest.GtFactory
 import abstractFactory.komputers.*
 
 
@@ -50,10 +52,7 @@ fun main() {
         factory.get(i).createMouses()
     }
 
-    val factory2 = listOf<GefestFactory>(
-        BzgaFactory(),
-        GtFactory()
-    )
+    val factory2 = listOf<GefestFactory>(BzgaFactory(), GtFactory())
     for(i in 0..factory2.count()-1) {
         factory2.get(i).createAll()
     }
